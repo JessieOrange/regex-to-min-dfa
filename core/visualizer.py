@@ -23,7 +23,7 @@ def visualize_nfa(nfa):
     dot.node("start", shape="plaintext")
     dot.edge("start", nfa.start.id, label="start")
     return dot
-  def visualize_dfa(dfa, start, finals):
+def visualize_dfa(dfa, start, finals):
     dot = graphviz.Digraph()
     state_names = {s: f"S{i}" for i, s in enumerate(dfa)}
 
@@ -37,7 +37,7 @@ def visualize_nfa(nfa):
     dot.node("start", shape="plaintext")
     dot.edge("start", state_names[start], label="start")
     return dot
-  def visualize_min_dfa(dfa, start, finals):
+def visualize_min_dfa(dfa, start, finals):
     dot = graphviz.Digraph()
     for s in dfa:
         shape = 'doublecircle' if s in finals else 'circle'
